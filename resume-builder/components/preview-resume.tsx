@@ -24,7 +24,7 @@ export const PreviewResume = forwardRef<
   return (
     <div className="max-w-4xl mx-auto p-8 bg-white" ref={ref}>
       {/* Header / Basic Info */}
-      <header className="mb-8 flex items-center">
+      <header className="mb-8 sm:flex items-center">
         <Avatar className="w-32 h-32 mb-4">
           <AvatarImage src={basics?.image} alt={basics?.name} />
           <AvatarFallback>{basics?.name?.charAt(0) || "J"}</AvatarFallback>
