@@ -1,0 +1,117 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+      "name": "Maurin Schickli",
+      "label": "Software Engineer Apprentice at Buhler - 🥈 Vice world champion in Industry 4.0",
+      "image": "",
+      "email": "maurin.schickli@gmail.com",
+      "phone": "",
+      "url": "",
+      "summary": "",
+      "location": {
+        "countryCode": "CH",
+        "address": ""
+      },
+      "profiles": [
+        {
+          "network": "LinkedIn",
+          "username": "maurin-schickli",
+          "url": "https://www.linkedin.com/in/maurin-schickli/"
+        }
+      ]
+    },
+    "work": [
+      {
+        "name": "Bühler Group",
+        "position": "Software Engineer Apprentice",
+        "startDate": "2021-08-31",
+        "endDate": "",
+        "highlights": ["we went to japan"],
+        "url": "https://www.linkedin.com/company/buhler/",
+        "location": "Uzwil, St Gallen, Switzerland"
+      }
+    ],
+    "volunteer": [],
+    "education": [
+      {
+        "institution": "GBS Gewerbliches Berufs- und Weiterbildungszentrum St. Gallen",
+        "area": "St.Gallen",
+        "studyType": "Berufsmaturität - BM",
+        "startDate": "2021-08-31",
+        "endDate": "2025-07-31",
+        "score": "",
+        "courses": []
+      }
+    ],
+    "awards": [
+      {
+        "title": "Worldskills Vice-Champion in Industry 4.0",
+        "date": "2024-09-30",
+        "awarder": "WorldSkills",
+        "summary": ""
+      },
+      {
+        "title": "SwissSkills Champion Industry 4.0 🥇",
+        "date": "2023-09-30",
+        "awarder": "SwissSkills",
+        "summary": ""
+      }
+    ],
+    "certificates": [
+      {
+        "name": "First Certificate in English (FCE) - CEFR Level C1 ",
+        "issuer": "Cambridge University Press & Assessment English",
+        "startDate": "2024-07-31"
+      }
+    ],
+    "publications": [],
+    "skills": [
+      {
+        "name": "SQL",
+        "level": "",
+        "keywords": []
+      },
+      {
+        "name": "OPC UA",
+        "level": "",
+        "keywords": []
+      },
+      {
+        "name": "Angular",
+        "level": "",
+        "keywords": []
+      },
+      {
+        "name": "TypeScript",
+        "level": "",
+        "keywords": []
+      },
+      {
+        "name": "C#",
+        "level": "",
+        "keywords": []
+      },
+      {
+        "name": "Industry 4.0",
+        "level": "",
+        "keywords": []
+      }
+    ],
+    "languages": [
+      {
+        "fluency": "Native Speaker",
+        "language": "Deutsch"
+      },
+      {
+        "fluency": "Professional Working",
+        "language": "Englisch"
+      }
+    ],
+    "interests": [],
+    "references": [],
+    "projects": [],
+    "meta": {
+      "version": "v1.0.0",
+      "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+    }
+  }
