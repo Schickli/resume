@@ -5,7 +5,7 @@ import { PreviewResume } from "@/components/preview-resume";
 import { ResumeUploaderComponent } from "@/components/resume-uploader";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Download } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 
 type JSONData = Record<string, any>;
@@ -14,7 +14,18 @@ export default function Home() {
   const [jsonData, setJsonData] = useState<JSONData | null>(null);
   const componentRef = useRef<HTMLDivElement>(null);
 
-  const handlePrint = useReactToPrint({ contentRef: componentRef });
+  const handlePrint = useReactToPrint({
+    contentRef: componentRef,
+    documentTitle: "resume-" + getName(),
+  });
+
+  function getName() {
+    try {
+      return jsonData?.basics.name.toLowerCase().replace(" ", "-");
+    } catch (e) {
+      return "";
+    }
+  }
 
   if (!jsonData) {
     return (
@@ -28,18 +39,26 @@ export default function Home() {
   if (jsonData) {
     return (
       <div>
-        <div className="flex justify-end mb-4 fixed right-0 gap-2 m-5">
-          <Button
-            onClick={() => setJsonData(null)}
-            variant="outline"
-          >
-            <ArrowLeft className="w-4 h-4 mr-1" />
-            Back
-          </Button>
-          <Button onClick={() => handlePrint()}>
-            <Download className="w-4 h-4 mr-1" />
-            Download PDF
-          </Button>
+        <div className="flex justify-end fixed right-0 m-5 flex-col ">
+          <div className="">
+            <div className="flex space-x-2 w-full">
+              <Button onClick={() => setJsonData(null)} variant="outline">
+                <ArrowLeft className="w-4 h-4 mr-1" />
+                Back
+              </Button>
+              <Button onClick={() => handlePrint()}>
+                <Download className="w-4 h-4 mr-1" />
+                Download PDF
+              </Button>
+            </div>
+            <div className="w-full mt-5 flex justify-end">
+              <p className="text-right right-0 w-60 rounded-sm">
+                When printing disable the option{" "}
+                <b>"Print headers and footers"</b> and <b>"Print background"</b>{" "}
+                for a clean pdf.
+              </p>
+            </div>
+          </div>
         </div>
         <PreviewResume ref={componentRef} json={jsonData} />
       </div>

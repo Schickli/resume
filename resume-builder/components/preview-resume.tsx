@@ -18,7 +18,7 @@ export const PreviewResume = forwardRef<
     return <div className="text-center p-4">No resume data available</div>;
   }
 
-  const { basics, work, education, skills, languages, projects } = json;
+  const { basics, work, education, skills, languages, projects, awards, interests } = json;
 
   useEffect(() => {
     if (imagesLoaded) {
@@ -39,16 +39,16 @@ export const PreviewResume = forwardRef<
   };
 
   return (
-    <div className="flex justify-center items-start min-h-screen bg-gray-100 p-8">
+    <div className="flex justify-center items-start min-h-screen p-8">
       <div
         className="w-[21cm] min-h-[29.7cm] bg-white shadow-md mx-auto my-8 p-[1cm] font-sans"
         style={{
           boxSizing: "border-box",
         }}
       >
-        <div ref={ref} className="print:p-[1cm]">
+        <div ref={ref}>
           {/* Header / Basic Info */}
-          <header className="mb-6 border-b pb-6">
+          <header className="mb-3 border-b pb-3 break-inside-avoid">
             <div className="flex items-center gap-4">
               <div className="relative w-24 h-24">
                 {/* Avatar with conditional spinner */}
@@ -79,10 +79,19 @@ export const PreviewResume = forwardRef<
                   {basics?.email && (
                     <span className="mr-4">{basics.email}</span>
                   )}
-                  {basics?.phone && (
-                    <span className="mr-4">{basics.phone}</span>
+                  {basics?.url && <span className="mr-4">{basics.url}</span>}
+                  {basics?.location?.address && (
+                    <span className="mr-4">{basics.location.address}</span>
                   )}
-                  {basics?.url && <span>{basics.url}</span>}
+                  {languages && languages.length > 0 && (
+                    <ul className="list-disc list-inside text-sm mt-1">
+                      {languages.map((lang: any, index: number) => (
+                        <li key={index}>
+                          {lang.language} - {lang.fluency}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             </div>
@@ -90,24 +99,25 @@ export const PreviewResume = forwardRef<
 
           {/* Summary */}
           {basics?.summary && (
-            <section className="mb-6">
-              <h2 className="text-xl font-semibold mb-2">Summary</h2>
+            <section className="mb-3 break-inside-avoid">
               <p className="text-sm">{basics.summary}</p>
             </section>
           )}
 
           {/* Work Experience */}
           {work && work.length > 0 && (
-            <section className="mb-6">
+            <section className="mb-3 break-inside-avoid">
               <h2 className="text-xl font-semibold mb-2">Work Experience</h2>
               {work.map((job: any, index: number) => (
                 <div key={index} className="mb-4">
-                  <h3 className="font-semibold">
-                    {job.position} at {job.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {job.startDate} - {job.endDate || "Present"}
-                  </p>
+                  <div className="flex flex-wrap gap-2 items-center justify-between">
+                    <h3 className="font-semibold">
+                      {job.position} at {job.name}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {job.startDate} - {job.endDate || "Present"}
+                    </p>
+                  </div>
                   <p className="text-sm mt-1">{job.summary}</p>
                   {job.highlights && (
                     <ul className="list-disc list-inside text-sm mt-1">
@@ -121,19 +131,52 @@ export const PreviewResume = forwardRef<
             </section>
           )}
 
+          {/* Projects */}
+          {projects && projects.length > 0 && (
+            <section className="mb-3 break-inside-avoid">
+              <h2 className="text-xl font-semibold mb-2">Projects</h2>
+              {projects.map((project: any, index: number) => (
+                <div key={index} className="mb-4">
+                  <div className="flex flex-wrap gap-2 items-center justify-between">
+                    <div className="flex gap-1">
+                      <h3 className="font-semibold">{project.name}</h3>
+                      <h3>-</h3>
+                      <h3 className="">{project.type}</h3>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      {project.startDate} - {project.endDate || "Present"}
+                    </p>
+                  </div>
+                  <p className="text-sm mt-1">{project.description}</p>
+                  {project.highlights && (
+                    <ul className="list-disc list-inside text-sm mt-1">
+                      {project.highlights.map(
+                        (highlight: string, i: number) => (
+                          <li key={i}>{highlight}</li>
+                        )
+                      )}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </section>
+          )}
+
           {/* Education */}
           {education && education.length > 0 && (
-            <section className="mb-6">
+            <section className="mb-3 break-inside-avoid">
               <h2 className="text-xl font-semibold mb-2">Education</h2>
               {education.map((edu: any, index: number) => (
                 <div key={index} className="mb-4">
-                  <h3 className="font-semibold">
-                    {edu.studyType} in {edu.area}
-                  </h3>
+                  <div className="flex flex-wrap gap-2 items-center justify-between">
+                    <h3 className="font-semibold">
+                      {edu.studyType} {edu.area && <span>in {edu.area}</span>}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {edu.startDate} - {edu.endDate || "Present"}
+                    </p>
+                  </div>
                   <p className="text-sm text-gray-600">{edu.institution}</p>
-                  <p className="text-sm text-gray-600">
-                    {edu.startDate} - {edu.endDate || "Present"}
-                  </p>
                 </div>
               ))}
             </section>
@@ -141,7 +184,7 @@ export const PreviewResume = forwardRef<
 
           {/* Skills */}
           {skills && skills.length > 0 && (
-            <section className="mb-6">
+            <section className="mb-3  break-inside-avoid">
               <h2 className="text-xl font-semibold mb-2">Skills</h2>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill: any, index: number) => (
@@ -156,42 +199,38 @@ export const PreviewResume = forwardRef<
             </section>
           )}
 
-          {/* Languages */}
-          {languages && languages.length > 0 && (
-            <section className="mb-6">
-              <h2 className="text-xl font-semibold mb-2">Languages</h2>
-              <ul className="list-disc list-inside text-sm">
-                {languages.map((lang: any, index: number) => (
-                  <li key={index}>
-                    {lang.language} - {lang.fluency}
-                  </li>
-                ))}
-              </ul>
+          {/* Awards */}
+          {awards && awards.length > 0 && (
+            <section className="mb-3 break-inside-avoid">
+              <h2 className="text-xl font-semibold mb-2">Awards</h2>
+              {awards.map((award: any, index: number) => (
+                <div key={index} className="mb-4">
+                  <div className="flex flex-wrap gap-2 items-center justify-between">
+                    <h3 className="font-semibold">{award.title}</h3>
+                    <p className="text-sm text-gray-600">
+                      {award.date} - {award.awarder}
+                    </p>
+                  </div>
+                  <p className="text-sm mt-1">{award.summary}</p>
+                </div>
+              ))}
             </section>
           )}
 
-          {/* Projects */}
-          {projects && projects.length > 0 && (
-            <section className="mb-6">
-              <h2 className="text-xl font-semibold mb-2">Projects</h2>
-              {projects.map((project: any, index: number) => (
-                <div key={index} className="mb-4">
-                  <h3 className="font-semibold">{project.name}</h3>
-                  <p className="text-sm text-gray-600">
-                    {project.startDate} - {project.endDate || "Present"}
-                  </p>
-                  <p className="text-sm mt-1">{project.description}</p>
-                  {project.highlights && (
-                    <ul className="list-disc list-inside text-sm mt-1">
-                      {project.highlights.map(
-                        (highlight: string, i: number) => (
-                          <li key={i}>{highlight}</li>
-                        )
-                      )}
-                    </ul>
-                  )}
-                </div>
-              ))}
+          {/* Interests */}
+          {interests && interests.length > 0 && (
+            <section className="mb-3  break-inside-avoid">
+              <h2 className="text-xl font-semibold mb-2">Interests</h2>
+              <div className="flex flex-wrap gap-2">
+                {interests.map((interests: any, index: number) => (
+                  <span
+                    key={index}
+                    className="text-sm bg-gray-100 px-2 py-1 rounded"
+                  >
+                    {interests.name}
+                  </span>
+                ))}
+              </div>
             </section>
           )}
         </div>

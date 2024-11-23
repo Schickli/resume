@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "JSON Resume Generator in shadcn/ui style",
-  description: "JJSON Resume Generator in shadcn/ui style",
+  description: "JSON Resume Generator in shadcn/ui style",
 };
 
 export default function RootLayout({

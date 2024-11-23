@@ -60,121 +60,139 @@ export const ResumeUploaderComponent = forwardRef<
   });
 
   const exampleSchema = `{
-    "basics": {
-      "name": "Maurin Schickli",
-      "label": "Software Engineer Apprentice - Vice world champion in Industry 4.0",
-      "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
-      "email": "hello@schickli.com",
-      "phone": "",
-      "url": "schickli.com",
-      "summary": "",
-      "location": {
-        "countryCode": "CH",
-        "address": "St.Gallen"
-      },
-      "profiles": [
-        {
-          "network": "LinkedIn",
-          "username": "maurin-schickli",
-          "url": "https://www.linkedin.com/in/maurin-schickli/"
-        }
-      ]
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Maurin Schickli",
+    "label": "Fullstack Developer - Vice World Champion in Industry 4.0",
+    "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
+    "email": "hello@schickli.com",
+    "url": "https://schickli.com",
+    "summary": "Fullstack Developer skilled in creating useful features, optimizing workflows, and delivering innovative ideas. Dedicated to building solutions.",
+    "location": {
+      "address": "St.Gallen"
     },
-    "work": [
+    "profiles": [
       {
-        "name": "Bühler Group",
-        "position": "Software Engineering Apprentice",
-        "startDate": "August 2021",
-        "endDate": "August 2025",
-        "highlights": ["Help building a data platform for Buhler machines", "Working on Buhler's internal AI Chatbot Solution"],
-        "url": "https://www.linkedin.com/company/buhler/",
-        "location": "Uzwil, St Gallen, Switzerland"
+        "network": "LinkedIn",
+        "username": "maurin-schickli",
+        "url": "https://www.linkedin.com/in/maurin-schickli/"
       }
-    ],
-    "volunteer": [],
-    "education": [
-      {
-        "institution": "GBS Gewerbliches Berufs- und Weiterbildungszentrum St. Gallen",
-        "area": "St.Gallen",
-        "studyType": "Berufsmaturität - Berufsbegleitend",
-        "startDate": "August 2021",
-        "endDate": "August 2025",
-        "score": "",
-        "courses": []
-      }
-    ],
-    "awards": [
-      {
-        "title": "Worldskills Vice-Champion in Industry 4.0",
-        "date": "September 2024",
-        "awarder": "WorldSkills",
-        "summary": "Competing with other young professionals on a global scale to create IoT solutions for industry."
-      },
-      {
-        "title": "SwissSkills Champion Industry 4.0 🥇",
-        "date": "September 2023",
-        "awarder": "SwissSkills",
-        "summary": ""
-      }
-    ],
-    "certificates": [
-      {
-        "name": "First Certificate in English (FCE) - CEFR Level C1 ",
-        "issuer": "Cambridge University Press & Assessment English",
-        "startDate": "2024-07-31"
-      }
-    ],
-    "publications": [],
-    "skills": [
-      {
-        "name": "SQL",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "OPC UA",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Angular",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "TypeScript",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "C#",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Industry 4.0",
-        "level": "",
-        "keywords": []
-      }
-    ],
-    "languages": [
-      {
-        "fluency": "Native Speaker",
-        "language": "German"
-      },
-      {
-        "fluency": "Professional Working",
-        "language": "English"
-      }
-    ],
-    "interests": [],
-    "references": [],
-    "projects": [],
-    "meta": {
-      "version": "v1.0.0",
-      "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
-      }
-}`;
+    ]
+  },
+  "work": [
+    {
+      "name": "Bühler Group",
+      "position": "Software Engineering Apprentice",
+      "startDate": "August 2021",
+      "endDate": "August 2025",
+      "highlights": [
+        "Developing our administration portal to improve Bühler Insights setup and management workflows.",
+        "Outlined and improved our registration and update processes for our edge devices.",
+        "Contributing to Bühler's internal AI Chatbot Solution.",
+        "Helped in building Industry 4.0 expertise among the apprentices."
+      ],
+      "url": "https://www.linkedin.com/company/buhler/",
+      "location": "Uzwil, St Gallen, Switzerland"
+    }
+  ],
+  "education": [
+    {
+      "institution": "GBS Gewerbliches Berufs- und Weiterbildungszentrum St. Gallen",
+      "studyType": "Berufsmaturität - Berufsbegleitend",
+      "startDate": "August 2021",
+      "endDate": "August 2025"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Vice-World-Champion in Industry 4.0",
+      "date": "September 2024",
+      "awarder": "WorldSkills",
+      "summary": "Competed against top professionals worldwide to create IoT-enabled smart systems with features like alerts, image recognition, and database integration."
+    },
+    {
+      "title": "SwissSkills Winner in Industry 4.0",
+      "date": "September 2023",
+      "awarder": "SwissSkills",
+      "summary": "National champion in developing innovative Industry 4.0 solutions, including smart sensors and IoT systems."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Angular, Next.Js"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "C#"
+    },
+    {
+      "name": "Industry 4.0"
+    },
+    {
+      "name": "IoT & Edge Devices"
+    },
+    {
+      "name": "OPC UA"
+    },
+    {
+      "name": "Smart Sensors"
+    },
+    {
+      "name": "SQL"
+    }
+  ],
+  "languages": [
+    {
+      "language": "German",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional Working"
+    }
+  ],
+  "projects": [
+    {
+      "name": "DeepL UI",
+      "description": "I was part DeepL UI a project, executed entirely by apprentices, to implement a custom user interface for the DeepL API. This solution reduced costs by over 80%. The project taught us how to take software from concept to deployment, emphasizing teamwork, requirement management, and delivering a user-focused product.",
+      "startDate": "October 2022",
+      "endDate": "January 2023",
+      "type": "Apprenticeship"
+    },
+    {
+      "name": "Cocktail Mixer",
+      "description": "A machine capable of creating customized cocktails based on user input via a tablet. Features included ESP32 microcontroller, stepper motors, and a MES-like application for managing bottles and orders.",
+      "startDate": "Febuary 2024",
+      "type": "Hobby"
+    },
+    {
+      "name": "Resume Generator",
+      "description": "A tool for programmatically generating resumes from JSON, making it easier to create and update resumes. I created this because I struggled with updating my resume without destroying my formatting every time.",
+      "url": "http://resume.schickli.com",
+      "startDate": "November 2024",
+      "endDate": "December 2024",
+      "type": "Hobby"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Soccer"
+    },
+    {
+      "name": "Kitesurfing"
+    },
+    {
+      "name": "Skiing"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}
+`;
 
   const handleUseExampleJson = useCallback(() => {
     try {
