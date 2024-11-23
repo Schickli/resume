@@ -39,9 +39,9 @@ export const PreviewResume = forwardRef<
   };
 
   return (
-    <div className="flex justify-center items-start min-h-screen p-8">
+    <div className="flex justify-center items-start min-h-screen p-1 sm:p-8">
       <div
-        className="w-[21cm] min-h-[29.7cm] bg-white shadow-md mx-auto my-8 p-[1cm] font-sans"
+        className="w-[21cm] min-h-[29.7cm] bg-white shadow-md mx-auto my-8 p-[1cm] font-sans mt-48 sm:mt-32 lg:mt-0"
         style={{
           boxSizing: "border-box",
         }}
