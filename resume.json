@@ -47,7 +47,7 @@
       "title": "Vice-World-Champion in Industry 4.0",
       "date": "September 2024",
       "awarder": "WorldSkills",
-      "summary": "Competed against top professionals worldwide to create IoT-enabled smart systems with features like alerts, image recognition, and database integration."
+      "summary": "Competed against top professionals worldwide together with my teampartner to create IoT-enabled smart systems with features like alerts, image recognition, and database integration."
     },
     {
       "title": "SwissSkills Winner in Industry 4.0",
@@ -95,14 +95,14 @@
   "projects": [
     {
       "name": "DeepL UI",
-      "description": "I was part DeepL UI a project, executed entirely by apprentices, to implement a custom user interface for the DeepL API. This solution reduced costs by over 80%. The project taught us how to take software from concept to deployment, emphasizing teamwork, requirement management, and delivering a user-focused product.",
+      "description": "I was part of DeepL UI a project, executed entirely by apprentices, to implement a custom user interface for the DeepL API. This solution reduced costs by over 80%. The project taught us how to take software from concept to deployment, emphasizing teamwork, requirement management, and delivering a user-focused product.",
       "startDate": "October 2022",
       "endDate": "January 2023",
       "type": "Apprenticeship"
     },
     {
       "name": "Cocktail Mixer",
-      "description": "A machine capable of creating customized cocktails based on user input via a tablet. Features included ESP32 microcontroller, stepper motors, and a MES-like application for managing bottles and orders.",
+      "description": "A machine capable of creating customised cocktails based on user input via a tablet. Features included an ESP32 microcontroller, stepper motors and an MES-like application to manage bottles and orders. I faced some challenges in managing the different states of the machine. I overcame this by drawing out all the possible outcomes and thinking from an operator and customer point of view.",
       "startDate": "Febuary 2024",
       "type": "Hobby"
     },

@@ -49,7 +49,7 @@ export const PreviewResume = forwardRef<
         <div ref={ref}>
           {/* Header / Basic Info */}
           <header className="mb-3 border-b pb-3 break-inside-avoid">
-            <div className="flex items-center gap-4">
+            <div className="block sm:flex items-center gap-4">
               <div className="relative w-24 h-24">
                 {/* Avatar with conditional spinner */}
                 <Avatar className="w-24 h-24">
