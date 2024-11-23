@@ -1,9 +1,10 @@
 "use client";
 
+import { InformationSection } from "@/components/information-section";
 import { PreviewResume } from "@/components/preview-resume";
 import { ResumeUploaderComponent } from "@/components/resume-uploader";
 import { Button } from "@/components/ui/button";
-import { Download, Trash } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 
@@ -17,24 +18,26 @@ export default function Home() {
 
   if (!jsonData) {
     return (
-      <ResumeUploaderComponent setJsonData={setJsonData} ref={componentRef} />
+      <div>
+        <ResumeUploaderComponent setJsonData={setJsonData} ref={componentRef} />
+        <InformationSection />
+      </div>
     );
   }
 
   if (jsonData) {
     return (
       <div>
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end mb-4 fixed right-0 gap-2 m-5">
           <Button
             onClick={() => setJsonData(null)}
-            className="m-5"
             variant="outline"
           >
-            <Trash className="w-4 h-4 mr-2" />
-            Clear Resume
+            <ArrowLeft className="w-4 h-4 mr-1" />
+            Back
           </Button>
-          <Button onClick={() => handlePrint()} className="m-5">
-            <Download className="w-4 h-4 mr-2" />
+          <Button onClick={() => handlePrint()}>
+            <Download className="w-4 h-4 mr-1" />
             Download PDF
           </Button>
         </div>

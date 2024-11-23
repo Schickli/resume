@@ -1,213 +1,201 @@
+import { forwardRef, useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Mail, Phone, Globe, Calendar } from "lucide-react";
-import { forwardRef } from "react";
+import { toast } from "sonner";
 
 type JSONData = Record<string, any>;
 
 interface PreviewResumeComponentProps {
   json?: JSONData | null;
-  ref: HTMLDivElement | null;
 }
 
 export const PreviewResume = forwardRef<
   HTMLDivElement,
   PreviewResumeComponentProps
 >(({ json }, ref) => {
-  if (!json) {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  if (!json || !json.basics) {
     return <div className="text-center p-4">No resume data available</div>;
   }
 
   const { basics, work, education, skills, languages, projects } = json;
 
+  useEffect(() => {
+    if (imagesLoaded) {
+      toast.success("Resume finished generating!");
+    }
+  }, [imagesLoaded]);
+
+  useEffect(() => {
+    if (basics.image === "") {
+      setImagesLoaded(true);
+    }
+  }, [basics]);
+
+  const handleAvatarLoad = () => {
+    if (basics.image != "") {
+      setImagesLoaded(true);
+    }
+  };
+
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white" ref={ref}>
-      {/* Header / Basic Info */}
-      <header className="mb-8 sm:flex items-center">
-        <Avatar className="w-32 h-32 mb-4">
-          <AvatarImage src={basics?.image} alt={basics?.name} />
-          <AvatarFallback>{basics?.name?.charAt(0) || "J"}</AvatarFallback>
-        </Avatar>
-        <div className="p-4">
-          <h1 className="text-3xl font-bold mb-2">
-            {basics?.name || "Name Not Provided"}
-          </h1>
-          <p className="text-xl text-muted-foreground mb-4">
-            {basics?.label || "Role Not Specified"}
-          </p>
-          <div className="flex space-x-4 text-sm text-muted-foreground">
-            {basics?.location && (
-              <span className="flex items-center">
-                <MapPin className="w-4 h-4 mr-1" />
-                {`${basics.location.city}, ${basics.location.region}`}
-              </span>
-            )}
-            {basics?.email && (
-              <span className="flex items-center">
-                <Mail className="w-4 h-4 mr-1" />
-                {basics.email}
-              </span>
-            )}
-            {basics?.phone && (
-              <span className="flex items-center">
-                <Phone className="w-4 h-4 mr-1" />
-                {basics.phone}
-              </span>
-            )}
-            {basics?.url && (
-              <span className="flex items-center">
-                <Globe className="w-4 h-4 mr-1" />
-                <a
-                  href={basics.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  Website
-                </a>
-              </span>
-            )}
-          </div>
-        </div>
-      </header>
-
-      {/* Summary */}
-      {basics?.summary && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Summary</h2>
-          <p>{basics.summary}</p>
-        </section>
-      )}
-
-      {/* Work Experience */}
-      {work && work.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Work Experience</h2>
-          {work.map((job: any, index: number) => (
-            <Card key={index} className="mb-4">
-              <CardHeader className="pb-2">
-                <CardTitle>
-                  {job.position} at {job.name}
-                </CardTitle>
-                <p className="text-sm text-muted-foreground">
-                  <Calendar className="inline w-4 h-4 mr-1" />
-                  {job.startDate} - {job.endDate || "Present"}
+    <div className="flex justify-center items-start min-h-screen bg-gray-100 p-8">
+      <div
+        className="w-[21cm] min-h-[29.7cm] bg-white shadow-md mx-auto my-8 p-[1cm] font-sans"
+        style={{
+          boxSizing: "border-box",
+        }}
+      >
+        <div ref={ref} className="print:p-[1cm]">
+          {/* Header / Basic Info */}
+          <header className="mb-6 border-b pb-6">
+            <div className="flex items-center gap-4">
+              <div className="relative w-24 h-24">
+                {/* Avatar with conditional spinner */}
+                <Avatar className="w-24 h-24">
+                  {imagesLoaded == false && (
+                    <div className="absolute inset-0 flex justify-center items-center bg-gray-100">
+                      <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                  )}
+                  <AvatarImage
+                    src={basics?.image}
+                    alt={basics?.name}
+                    onLoad={handleAvatarLoad}
+                  />
+                  <AvatarFallback>
+                    {basics?.name?.charAt(0) || "MS"}
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+              <div>
+                <h1 className="text-3xl font-bold">
+                  {basics?.name || "Name Not Provided"}
+                </h1>
+                <p className="text-xl text-gray-600">
+                  {basics?.label || "Role Not Specified"}
                 </p>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-2">{job.summary}</p>
-                {job.highlights && (
-                  <ul className="list-disc list-inside">
-                    {job.highlights.map((highlight: string, i: number) => (
-                      <li key={i}>{highlight}</li>
-                    ))}
-                  </ul>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </section>
-      )}
+                <div className="mt-2 text-sm text-gray-600">
+                  {basics?.email && (
+                    <span className="mr-4">{basics.email}</span>
+                  )}
+                  {basics?.phone && (
+                    <span className="mr-4">{basics.phone}</span>
+                  )}
+                  {basics?.url && <span>{basics.url}</span>}
+                </div>
+              </div>
+            </div>
+          </header>
 
-      {/* Education */}
-      {education && education.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Education</h2>
-          {education.map((edu: any, index: number) => (
-            <Card key={index} className="mb-4">
-              <CardHeader className="pb-2">
-                <CardTitle>
-                  {edu.studyType} in {edu.area}
-                </CardTitle>
-                <p className="text-muted-foreground">{edu.institution}</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">
-                  <Calendar className="inline w-4 h-4 mr-1" />
-                  {edu.startDate} - {edu.endDate || "Present"}
-                </p>
-                {edu.courses && (
-                  <div>
-                    <p className="font-semibold mb-1">Courses:</p>
-                    <ul className="list-disc list-inside">
-                      {edu.courses.map((course: string, i: number) => (
-                        <li key={i}>{course}</li>
+          {/* Summary */}
+          {basics?.summary && (
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">Summary</h2>
+              <p className="text-sm">{basics.summary}</p>
+            </section>
+          )}
+
+          {/* Work Experience */}
+          {work && work.length > 0 && (
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">Work Experience</h2>
+              {work.map((job: any, index: number) => (
+                <div key={index} className="mb-4">
+                  <h3 className="font-semibold">
+                    {job.position} at {job.name}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {job.startDate} - {job.endDate || "Present"}
+                  </p>
+                  <p className="text-sm mt-1">{job.summary}</p>
+                  {job.highlights && (
+                    <ul className="list-disc list-inside text-sm mt-1">
+                      {job.highlights.map((highlight: string, i: number) => (
+                        <li key={i}>{highlight}</li>
                       ))}
                     </ul>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </section>
-      )}
+                  )}
+                </div>
+              ))}
+            </section>
+          )}
 
-      {/* Skills */}
-      {skills && skills.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill: any, index: number) => (
-              <Badge key={index} variant="secondary" className="text-sm">
-                {skill.name}
-              </Badge>
-            ))}
-          </div>
-        </section>
-      )}
+          {/* Education */}
+          {education && education.length > 0 && (
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">Education</h2>
+              {education.map((edu: any, index: number) => (
+                <div key={index} className="mb-4">
+                  <h3 className="font-semibold">
+                    {edu.studyType} in {edu.area}
+                  </h3>
+                  <p className="text-sm text-gray-600">{edu.institution}</p>
+                  <p className="text-sm text-gray-600">
+                    {edu.startDate} - {edu.endDate || "Present"}
+                  </p>
+                </div>
+              ))}
+            </section>
+          )}
 
-      {/* Languages */}
-      {languages && languages.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Languages</h2>
-          <ul className="list-disc list-inside">
-            {languages.map((lang: any, index: number) => (
-              <li key={index}>
-                {lang.language} - {lang.fluency}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Projects */}
-      {projects && projects.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-          {projects.map((project: any, index: number) => (
-            <Card key={index} className="mb-4">
-              <CardHeader className="pb-2">
-                <CardTitle>{project.name}</CardTitle>
-                <p className="text-sm text-muted-foreground">
-                  <Calendar className="inline w-4 h-4 mr-1" />
-                  {project.startDate} - {project.endDate || "Present"}
-                </p>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-2">{project.description}</p>
-                {project.highlights && (
-                  <ul className="list-disc list-inside">
-                    {project.highlights.map((highlight: string, i: number) => (
-                      <li key={i}>{highlight}</li>
-                    ))}
-                  </ul>
-                )}
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
+          {/* Skills */}
+          {skills && skills.length > 0 && (
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">Skills</h2>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill: any, index: number) => (
+                  <span
+                    key={index}
+                    className="text-sm bg-gray-100 px-2 py-1 rounded"
                   >
-                    Project Link
-                  </a>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </section>
-      )}
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Languages */}
+          {languages && languages.length > 0 && (
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">Languages</h2>
+              <ul className="list-disc list-inside text-sm">
+                {languages.map((lang: any, index: number) => (
+                  <li key={index}>
+                    {lang.language} - {lang.fluency}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Projects */}
+          {projects && projects.length > 0 && (
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">Projects</h2>
+              {projects.map((project: any, index: number) => (
+                <div key={index} className="mb-4">
+                  <h3 className="font-semibold">{project.name}</h3>
+                  <p className="text-sm text-gray-600">
+                    {project.startDate} - {project.endDate || "Present"}
+                  </p>
+                  <p className="text-sm mt-1">{project.description}</p>
+                  {project.highlights && (
+                    <ul className="list-disc list-inside text-sm mt-1">
+                      {project.highlights.map(
+                        (highlight: string, i: number) => (
+                          <li key={i}>{highlight}</li>
+                        )
+                      )}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </section>
+          )}
+        </div>
+      </div>
     </div>
   );
 });

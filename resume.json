@@ -2,15 +2,15 @@
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
     "basics": {
       "name": "Maurin Schickli",
-      "label": "Software Engineer Apprentice at Buhler - 🥈 Vice world champion in Industry 4.0",
-      "image": "",
+      "label": "Software Engineer Apprentice - Vice world champion in Industry 4.0",
+      "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
       "email": "maurin.schickli@gmail.com",
       "phone": "",
-      "url": "",
+      "url": "schickli.com",
       "summary": "",
       "location": {
         "countryCode": "CH",
-        "address": ""
+        "address": "St.Gallen"
       },
       "profiles": [
         {
@@ -23,10 +23,10 @@
     "work": [
       {
         "name": "Bühler Group",
-        "position": "Software Engineer Apprentice",
-        "startDate": "2021-08-31",
-        "endDate": "",
-        "highlights": ["we went to japan"],
+        "position": "Software Engineering Apprentice",
+        "startDate": "August 2021",
+        "endDate": "August 2025",
+        "highlights": ["Help building a data platform for Buhler machines", "Working on Buhler's internal AI Chatbot Solution"],
         "url": "https://www.linkedin.com/company/buhler/",
         "location": "Uzwil, St Gallen, Switzerland"
       }
@@ -36,9 +36,9 @@
       {
         "institution": "GBS Gewerbliches Berufs- und Weiterbildungszentrum St. Gallen",
         "area": "St.Gallen",
-        "studyType": "Berufsmaturität - BM",
-        "startDate": "2021-08-31",
-        "endDate": "2025-07-31",
+        "studyType": "Berufsmaturität - Berufsbegleitend",
+        "startDate": "August 2021",
+        "endDate": "August 2025",
         "score": "",
         "courses": []
       }
@@ -46,13 +46,13 @@
     "awards": [
       {
         "title": "Worldskills Vice-Champion in Industry 4.0",
-        "date": "2024-09-30",
+        "date": "September 2024",
         "awarder": "WorldSkills",
-        "summary": ""
+        "summary": "Competing with other young professionals on a global scale to create IoT solutions for industry."
       },
       {
         "title": "SwissSkills Champion Industry 4.0 🥇",
-        "date": "2023-09-30",
+        "date": "September 2023",
         "awarder": "SwissSkills",
         "summary": ""
       }
@@ -100,11 +100,11 @@
     "languages": [
       {
         "fluency": "Native Speaker",
-        "language": "Deutsch"
+        "language": "German"
       },
       {
         "fluency": "Professional Working",
-        "language": "Englisch"
+        "language": "English"
       }
     ],
     "interests": [],
