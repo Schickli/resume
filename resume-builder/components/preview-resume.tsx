@@ -147,6 +147,7 @@ export const PreviewResume = forwardRef<
                       {project.startDate} - {project.endDate || "Present"}
                     </p>
                   </div>
+                  <p className="text-sm mt-1">{project.url}</p>
                   <p className="text-sm mt-1">{project.description}</p>
                   {project.highlights && (
                     <ul className="list-disc list-inside text-sm mt-1">
