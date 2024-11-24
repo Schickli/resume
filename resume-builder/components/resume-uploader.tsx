@@ -67,7 +67,7 @@ export const ResumeUploaderComponent = forwardRef<
     "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
     "email": "hello@schickli.com",
     "url": "https://schickli.com",
-    "summary": "Fullstack Developer skilled in creating useful features, optimizing workflows, and delivering innovative ideas. Dedicated to building solutions.",
+    "summary": "Fullstack Developer passionate about building solutions that simplify workflows and solve real-world challenges. With a background in IoT and software development, I enjoy transforming complex ideas into user-friendly tools. Outside of work, I find balance through soccer, kitesurfing, and skiing.",
     "location": {
       "address": "St.Gallen"
     },
@@ -98,7 +98,7 @@ export const ResumeUploaderComponent = forwardRef<
   "education": [
     {
       "institution": "GBS Gewerbliches Berufs- und Weiterbildungszentrum St. Gallen",
-      "studyType": "Berufsmaturität - Berufsbegleitend",
+      "studyType": "BMS - Part-Time",
       "startDate": "August 2021",
       "endDate": "August 2025"
     }
@@ -156,7 +156,7 @@ export const ResumeUploaderComponent = forwardRef<
   "projects": [
     {
       "name": "DeepL UI",
-      "description": "I was part of DeepL UI a project, executed entirely by apprentices, to implement a custom user interface for the DeepL API. This solution reduced costs by over 80%. The project taught us how to take software from concept to deployment, emphasizing teamwork, requirement management, and delivering a user-focused product.",
+      "description": "I was part of DeepL UI, a project executed entirely by apprentices, to implement a custom user interface for the DeepL API. This solution reduced costs by over 80%. The project taught us how to take software from concept to deployment, emphasizing teamwork, requirement management, and delivering a user-focused product.",
       "startDate": "October 2022",
       "endDate": "January 2023",
       "type": "Apprenticeship"
@@ -192,6 +192,7 @@ export const ResumeUploaderComponent = forwardRef<
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
   }
 }
+
 `;
 
   const handleUseExampleJson = useCallback(() => {
