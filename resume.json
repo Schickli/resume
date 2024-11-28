@@ -6,7 +6,7 @@
     "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
     "email": "hello@schickli.com",
     "url": "https://schickli.com",
-    "summary": "Fullstack Developer passionate about building solutions that simplify workflows and solve real-world challenges. With a background in IoT and software development, I enjoy transforming complex ideas into user-friendly tools. Outside of work, I find balance through soccer, kitesurfing, and skiing.",
+    "summary": "Fullstack Developer passionate about building solutions that solve real-world challenges. With a background in IoT and software development, I enjoy solving ideas into user-friendly tools.",
     "location": {
       "address": "St.Gallen"
     },
@@ -22,12 +22,13 @@
     {
       "name": "Bühler Group",
       "position": "Software Engineering Apprentice",
+      "description": "Global leader in food processing, Annual turnover: CHF 2.9 billion",
       "startDate": "August 2021",
       "endDate": "August 2025",
       "highlights": [
         "Developing our administration portal to improve Bühler Insights setup and management workflows.",
         "Outlined and improved our registration and update processes for our edge devices.",
-        "Contributing to Bühler's internal AI Chatbot Solution.",
+        "Contributing to Bühler's internal AI Chatbot Solution used by over 2'000 people monthly.",
         "Helped in building Industry 4.0 expertise among the apprentices."
       ],
       "url": "https://www.linkedin.com/company/buhler/",

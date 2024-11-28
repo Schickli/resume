@@ -18,7 +18,16 @@ export const PreviewResume = forwardRef<
     return <div className="text-center p-4">No resume data available</div>;
   }
 
-  const { basics, work, education, skills, languages, projects, awards, interests } = json;
+  const {
+    basics,
+    work,
+    education,
+    skills,
+    languages,
+    projects,
+    awards,
+    interests,
+  } = json;
 
   useEffect(() => {
     if (imagesLoaded) {
@@ -111,14 +120,16 @@ export const PreviewResume = forwardRef<
               {work.map((job: any, index: number) => (
                 <div key={index} className="mb-4">
                   <div className="flex flex-wrap gap-2 items-center justify-between">
-                    <h3 className="font-semibold">
-                      {job.position} at {job.name}
-                    </h3>
+                    <div className="flex gap-1">
+                      <h3 className="font-semibold">{job.name}</h3>
+                      <p>-</p>
+                      <p>{job.position}</p>
+                    </div>
                     <p className="text-sm text-gray-600">
                       {job.startDate} - {job.endDate || "Present"}
                     </p>
                   </div>
-                  <p className="text-sm mt-1">{job.summary}</p>
+                  <p className="text-sm mt-1 text-gray-600">{job.description}</p>
                   {job.highlights && (
                     <ul className="list-disc list-inside text-sm mt-1">
                       {job.highlights.map((highlight: string, i: number) => (
@@ -147,7 +158,7 @@ export const PreviewResume = forwardRef<
                       {project.startDate} - {project.endDate || "Present"}
                     </p>
                   </div>
-                  <p className="text-sm mt-1">{project.url}</p>
+                  <p className="text-sm mt-1 text-gray-600">{project.url}</p>
                   <p className="text-sm mt-1">{project.description}</p>
                   {project.highlights && (
                     <ul className="list-disc list-inside text-sm mt-1">

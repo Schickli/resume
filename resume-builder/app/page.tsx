@@ -8,8 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
-
-// 
+ 
 type JSONData = Record<string, any>;
 
 export default function Home() {
