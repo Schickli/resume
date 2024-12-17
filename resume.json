@@ -26,9 +26,9 @@
       "startDate": "August 2021",
       "endDate": "August 2025",
       "highlights": [
-        "Developing our administration portal to improve Bühler Insights setup and management workflows.",
+        "Developing our angular administration portal to improve Bühler Insights setup and management workflows.",
         "Outlined and improved our registration and update processes for our edge devices.",
-        "Contributing to Bühler's internal AI Chatbot Solution used by over 2'000 people monthly.",
+        "Contributed to Bühler's internal AI Chatbot Solution used by over 5'000 people monthly.",
         "Helped in building Industry 4.0 expertise among the apprentices."
       ],
       "url": "https://www.linkedin.com/company/buhler/",
@@ -41,6 +41,12 @@
       "studyType": "BMS - Part-Time",
       "startDate": "August 2021",
       "endDate": "August 2025"
+    },
+    {
+      "institution": "Sekundarschule Abtwil",
+      "studyType": "Sekundarschule",
+      "startDate": "August 2018",
+      "endDate": "August 2021"
     }
   ],
   "awards": [
