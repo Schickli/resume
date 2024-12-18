@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Maurin Schickli",
+    "label": "Fullstack-Entwickler - Vizeweltmeister in Industrie 4.0",
+    "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
+    "email": "hello@schickli.com",
+    "url": "https://schickli.com",
+    "summary": "Fullstack-Entwickler, leidenschaftlich daran interessiert, Lösungen zu entwickeln, die reale Herausforderungen bewältigen. Mit einem Hintergrund in IoT und Softwareentwicklung löse ich gerne Probleme.",
+    "location": {
+      "address": "St.Gallen"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "maurin-schickli",
+        "url": "https://www.linkedin.com/in/maurin-schickli/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Bühler Group",
+      "position": "Software Engineering Lehrling",
+      "description": "Weltmarktführer in der Lebensmittelverarbeitung, Jahresumsatz: CHF 2,9 Milliarden",
+      "startDate": "August 2021",
+      "endDate": "August 2025",
+      "highlights": [
+        "Entwicklung unseres Angular-Administrationsportals zur Verbesserung der Bühler Insights Setup- und Verwaltungsabläufe.",
+        "Verbesserung unserer Registrierungs- und Updateprozesse für unsere Edge-Geräte die bei der Maschine stehen.",
+        "Entwicklung von Bühlers interner AI-Chatbot-Lösung, die monatlich von über 5.000 Personen genutzt wird.",
+        "Mitgewirkt am Aufbau von Industrie 4.0 Fachkenntnissen unter den Lehrlingen."
+      ],
+      "url": "https://www.linkedin.com/company/buhler/",
+      "location": "Uzwil, St. Gallen, Schweiz"
+    }
+  ],
+  "education": [
+    {
+      "institution": "GBS Gewerbliches Berufs- und Weiterbildungszentrum St. Gallen",
+      "studyType": "BMS - Lehrbegleitend",
+      "startDate": "August 2021",
+      "endDate": "August 2025"
+    },
+    {
+      "institution": "Sekundarschule Abtwil",
+      "studyType": "Sekundarschule",
+      "startDate": "August 2018",
+      "endDate": "August 2021"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Vize-Weltmeister in Industrie 4.0",
+      "date": "September 2024",
+      "awarder": "WorldSkills",
+      "summary": "Wettbewerb gegen die besten Fachleute weltweit gemeinsam mit meinem Teamkollegen, um IoT-fähige intelligente Systeme mit Funktionen wie Warnmeldungen, Bilderkennung und Datenbankintegration zu erstellen."
+    },
+    {
+      "title": "Schweizer Meister in Industrie 4.0",
+      "date": "September 2023",
+      "awarder": "SwissSkills",
+      "summary": "Nationaler Meister in der Entwicklung innovativer Industrie 4.0 Lösungen, einschließlich intelligenter Sensoren und IoT-Systeme."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Angular, Next.Js"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "C#"
+    },
+    {
+      "name": "Industrie 4.0"
+    },
+    {
+      "name": "IoT & Edge-Geräte"
+    },
+    {
+      "name": "OPC UA"
+    },
+    {
+      "name": "Intelligente Sensoren"
+    },
+    {
+      "name": "SQL"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Deutsch",
+      "fluency": "Muttersprache"
+    },
+    {
+      "language": "Englisch",
+      "fluency": "Berufliche Kenntnisse"
+    }
+  ],
+  "projects": [
+    {
+      "name": "DeepL UI",
+      "description": "Ich war Teil von DeepL UI, einem Projekt, das vollständig von Lehrlingen ausgeführt wurde, um eine benutzerdefinierte Benutzeroberfläche für die DeepL-API zu implementieren. Diese Lösung reduzierte die Kosten um über 80 %. Das Projekt lehrte uns, Software von der Konzeption bis zur Bereitstellung zu bringen, wobei der Schwerpunkt auf Teamarbeit, Anforderungsmanagement und der Bereitstellung eines benutzerzentrierten Produkts lag.",
+      "startDate": "Oktober 2022",
+      "endDate": "Januar 2023",
+      "type": "Lehre"
+    },
+    {
+      "name": "Cocktail Mixer",
+      "description": "Eine Maschine, die benutzerdefinierte Cocktails basierend auf Benutzereingaben über ein Tablet erstellen kann. Zu den Funktionen gehörten ein ESP32-Mikrocontroller, Schrittmotoren und eine MES-ähnliche Anwendung zur Verwaltung von Flaschen und Bestellungen. Ich hatte einige Herausforderungen beim Verwalten der verschiedenen Zustände der Maschine. Ich überwand dies, indem ich alle möglichen Ergebnisse zeichnete und aus Sicht eines Bedieners und Kunden dachte.",
+      "startDate": "Februar 2024",
+      "type": "Hobby"
+    },
+    {
+      "name": "Resume Generator",
+      "description": "Ein Tool zur programmgesteuerten Erstellung von Lebensläufen aus JSON, das die Erstellung und Aktualisierung von Lebensläufen erleichtert. Ich habe dieses Tool erstellt, weil ich Schwierigkeiten hatte, meinen Lebenslauf zu aktualisieren, ohne jedes Mal mein Format zu zerstören.",
+      "url": "http://resume.schickli.com",
+      "startDate": "November 2024",
+      "endDate": "Dezember 2024",
+      "type": "Hobby"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Fußball"
+    },
+    {
+      "name": "Kitesurfen"
+    },
+    {
+      "name": "Skifahren"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}
