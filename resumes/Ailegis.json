@@ -2,11 +2,11 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Maurin Schickli",
-    "label": "Fullstack Developer - Vice World Champion in Industry 4.0",
+    "label": "Backend Developer - Vice World Champion in Industry 4.0",
     "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
     "email": "hello@schickli.com",
     "url": "https://schickli.com",
-    "summary": "Fullstack Developer passionate about building solutions that solve real-world challenges. With a background in IoT and software development, I enjoy translating ideas into user-friendly tools.",
+    "summary": "Backend Developer passionate about building solutions that solve real-world challenges. With a background in IoT and software development, I enjoy translating ideas into user-friendly tools.",
     "location": {
       "address": "St.Gallen"
     },
@@ -22,14 +22,15 @@
     {
       "name": "Bühler Group",
       "position": "Software Engineering Apprentice",
-      "description": "Global leader in food processing, Annual turnover: CHF 2.9 billion",
+      "description": "I was mainly working on a Digital Platform that enables our customers to monitor and optimize their production processes. (Buhler Insights)",
       "startDate": "August 2021",
       "endDate": "August 2025",
       "highlights": [
-        "Developing our angular administration portal to improve Bühler Insights setup and management workflows.",
-        "Outlined and improved our registration and update processes for our edge devices.",
-        "Developed Bühler's internal AI Chatbot Solution used by over 5'000 people monthly.",
-        "Helped in building Industry 4.0 expertise among the apprentices."
+        "Developed Bühler's internal AI chatbot solution with Next.js, used by over 5,000 people monthly.",
+        "Implemented the capability to use SharePoint documents directly in persona creation for specific business units.",
+        "Developing our Angular administration portal to improve Bühler Insights setup and management workflows.",
+        "Outlined and improved our registration and update processes for edge devices using GitLab pipelines and shell scripts.",
+        "Built various automated production processes, including a camera vision system to recognize faulty parts on conveyor belts."
       ],
       "url": "https://www.linkedin.com/company/buhler/",
       "location": "Uzwil, St Gallen, Switzerland"
@@ -54,7 +55,7 @@
       "title": "Vice-World-Champion in Industry 4.0",
       "date": "September 2024",
       "awarder": "WorldSkills",
-      "summary": "Competed against top professionals worldwide together with my teampartner to create IoT-enabled smart systems with features like alerts, image recognition, and database integration."
+      "summary": "Competed against top professionals worldwide together with my teampartner to create IoT-enabled smart systems with features like alerts, image recognition, data labeling, and database integration."
     },
     {
       "title": "SwissSkills Winner in Industry 4.0",
@@ -80,7 +81,7 @@
       "name": "IoT & Edge Devices"
     },
     {
-      "name": "OPC UA"
+      "name": "Gitlab Pipelines"
     },
     {
       "name": "Smart Sensors"
@@ -115,7 +116,7 @@
     },
     {
       "name": "Resume Generator",
-      "description": "A tool for programmatically generating resumes from JSON, making it easier to create and update resumes. I created this because I struggled with updating my resume without destroying my formatting every time.",
+      "description": "A tool for programmatically generating resumes from JSON, making it easier to create and update resumes and generate PDF's from it. I created this because I struggled with updating my resume without destroying my formatting every time.",
       "url": "http://resume.schickli.com",
       "startDate": "November 2024",
       "endDate": "December 2024",

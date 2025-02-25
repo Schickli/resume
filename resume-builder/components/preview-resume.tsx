@@ -2,16 +2,36 @@ import { forwardRef, useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { toast } from "sonner";
 
+const translations = {
+  en: {
+    work: "Work Experience",
+    projects: "Projects",
+    education: "Education",
+    skills: "Skills",
+    awards: "Awards",
+    interests: "Interests",
+  },
+  de: {
+    work: "Berufserfahrung",
+    projects: "Projekte",
+    education: "Ausbildung",
+    skills: "Fähigkeiten",
+    awards: "Auszeichnungen",
+    interests: "Interessen",
+  },
+};
+
 type JSONData = Record<string, any>;
 
 interface PreviewResumeComponentProps {
+  language: "en" | "de";
   json?: JSONData | null;
 }
 
 export const PreviewResume = forwardRef<
   HTMLDivElement,
   PreviewResumeComponentProps
->(({ json }, ref) => {
+>(({ json, language }, ref) => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   if (!json || !json.basics) {
@@ -51,18 +71,14 @@ export const PreviewResume = forwardRef<
     <div className="flex justify-center items-start min-h-screen p-1 sm:p-8">
       <div
         className="w-[21cm] min-h-[29.7cm] bg-white shadow-md mx-auto my-8 p-[1cm] font-sans mt-48 sm:mt-32 lg:mt-0"
-        style={{
-          boxSizing: "border-box",
-        }}
+        style={{ boxSizing: "border-box" }}
       >
         <div ref={ref}>
-          {/* Header / Basic Info */}
           <header className="mb-3 border-b pb-3 break-inside-avoid">
             <div className="block sm:flex items-center gap-4">
               <div className="relative w-24 h-24">
-                {/* Avatar with conditional spinner */}
                 <Avatar className="w-24 h-24">
-                  {imagesLoaded == false && (
+                  {!imagesLoaded && (
                     <div className="absolute inset-0 flex justify-center items-center bg-gray-100">
                       <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
                     </div>
@@ -84,39 +100,15 @@ export const PreviewResume = forwardRef<
                 <p className="text-xl text-gray-600">
                   {basics?.label || "Role Not Specified"}
                 </p>
-                <div className="mt-2 text-sm text-gray-600">
-                  {basics?.email && (
-                    <span className="mr-4">{basics.email}</span>
-                  )}
-                  {basics?.url && <span className="mr-4">{basics.url}</span>}
-                  {basics?.location?.address && (
-                    <span className="mr-4">{basics.location.address}</span>
-                  )}
-                  {languages && languages.length > 0 && (
-                    <ul className="list-disc list-inside text-sm mt-1">
-                      {languages.map((lang: any, index: number) => (
-                        <li key={index}>
-                          {lang.language} - {lang.fluency}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
               </div>
             </div>
           </header>
 
-          {/* Summary */}
-          {basics?.summary && (
-            <section className="mb-3 break-inside-avoid">
-              <p className="text-sm">{basics.summary}</p>
-            </section>
-          )}
-
-          {/* Work Experience */}
           {work && work.length > 0 && (
             <section className="mb-3 break-inside-avoid">
-              <h2 className="text-xl font-semibold mb-2">Work Experience</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                {translations[language].work}
+              </h2>
               {work.map((job: any, index: number) => (
                 <div key={index} className="mb-4">
                   <div className="flex flex-wrap gap-2 items-center justify-between">
@@ -129,7 +121,9 @@ export const PreviewResume = forwardRef<
                       {job.startDate} - {job.endDate || "Present"}
                     </p>
                   </div>
-                  <p className="text-sm mt-1 text-gray-600">{job.description}</p>
+                  <p className="text-sm mt-1 text-gray-600">
+                    {job.description}
+                  </p>
                   {job.highlights && (
                     <ul className="list-disc list-inside text-sm mt-1">
                       {job.highlights.map((highlight: string, i: number) => (
@@ -142,10 +136,11 @@ export const PreviewResume = forwardRef<
             </section>
           )}
 
-          {/* Projects */}
           {projects && projects.length > 0 && (
             <section className="mb-3 break-inside-avoid">
-              <h2 className="text-xl font-semibold mb-2">Projects</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                {translations[language].projects}
+              </h2>
               {projects.map((project: any, index: number) => (
                 <div key={index} className="mb-4">
                   <div className="flex flex-wrap gap-2 items-center justify-between">
@@ -174,10 +169,28 @@ export const PreviewResume = forwardRef<
             </section>
           )}
 
-          {/* Education */}
+          {skills && skills.length > 0 && (
+            <section className="mb-3  break-inside-avoid">
+              <h2 className="text-xl font-semibold mb-2">
+                {translations[language].skills}
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill: any, index: number) => (
+                  <span
+                    key={index}
+                    className="text-sm bg-gray-100 px-2 py-1 rounded"
+                  >
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </section>
+          )}
           {education && education.length > 0 && (
             <section className="mb-3 break-inside-avoid">
-              <h2 className="text-xl font-semibold mb-2">Education</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                {translations[language].education}
+              </h2>
               {education.map((edu: any, index: number) => (
                 <div key={index} className="mb-4">
                   <div className="flex flex-wrap gap-2 items-center justify-between">
@@ -194,27 +207,12 @@ export const PreviewResume = forwardRef<
             </section>
           )}
 
-          {/* Skills */}
-          {skills && skills.length > 0 && (
-            <section className="mb-3  break-inside-avoid">
-              <h2 className="text-xl font-semibold mb-2">Skills</h2>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill: any, index: number) => (
-                  <span
-                    key={index}
-                    className="text-sm bg-gray-100 px-2 py-1 rounded"
-                  >
-                    {skill.name}
-                  </span>
-                ))}
-              </div>
-            </section>
-          )}
-
           {/* Awards */}
           {awards && awards.length > 0 && (
             <section className="mb-3 break-inside-avoid">
-              <h2 className="text-xl font-semibold mb-2">Awards</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                {translations[language].awards}
+              </h2>
               {awards.map((award: any, index: number) => (
                 <div key={index} className="mb-4">
                   <div className="flex flex-wrap gap-2 items-center justify-between">
@@ -232,7 +230,9 @@ export const PreviewResume = forwardRef<
           {/* Interests */}
           {interests && interests.length > 0 && (
             <section className="mb-3  break-inside-avoid">
-              <h2 className="text-xl font-semibold mb-2">Interests</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                {translations[language].interests}
+              </h2>
               <div className="flex flex-wrap gap-2">
                 {interests.map((interests: any, index: number) => (
                   <span
