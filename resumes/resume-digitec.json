@@ -1,0 +1,129 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Maurin Schickli",
+    "label": "Software Engineer for AI Products - Vice World Champion in Industry 4.0",
+    "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
+    "email": "hello@schickli.com",
+    "url": "https://schickli.com",
+    "summary": "Software engineer focused on AI-assisted products, agentic workflows, and industrial platforms, with hands-on experience in AI chat, retrieval-driven knowledge access, MCP servers, and IoT systems.",
+    "location": {
+      "address": "St.Gallen"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "maurin-schickli",
+        "url": "https://www.linkedin.com/in/maurin-schickli/"
+      },
+      {
+        "network": "GitHub",
+        "username": "Schickli",
+        "url": "https://github.com/Schickli"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Bühler Group",
+      "position": "Software Engineering Apprentice",
+      "description": "Worked on Bühler Insights and internal AI products that help employees and customers access knowledge and operate machines more cost-effectively.",
+      "startDate": "2021-08",
+      "endDate": "Present",
+      "highlights": [
+        "Helped develop Bühler's internal AI chat solution with Next.js, used by over 5'000 people each month.",
+        "Planned and implemented a Dashboard Agent for Bühler Insights by identifying useful APIs and defining tools and parameters, helping customers get more value from their machine dashboards.",
+        "Built a retrieval-driven knowledge extension for Bühler Chat as my apprenticeship final project, enabling users to query selected SharePoint documents and share personas with attached context.",
+        "Led a Gen AI workshop for employees from our ecommerce product area, where we rebuilt part of the shopping experience inside the ChatGPT app.",
+        "Contributed to various internal hackathons where we built, for example, an MCP server for live PLC variable access so AI agents could debug PLC code with better machine context."
+      ],
+      "url": "https://www.linkedin.com/company/buhler/",
+      "location": "Uzwil, St Gallen, Switzerland"
+    }
+  ],
+  "education": [
+    {
+      "institution": "GBS Gewerbliches Berufs- und Weiterbildungszentrum St. Gallen",
+      "studyType": "Apprenticeship with BMS",
+      "startDate": "2021-08",
+      "endDate": "2025-08"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Vice-World-Champion in Industry 4.0",
+      "date": "2023-09 & 2024-09",
+      "awarder": "SwissSkills & WorldSkills",
+      "summary": "Competed against top professionals nationwide and worldwide together with my teampartner to create IoT-enabled smart systems with features like alerts, image recognition, and database integration."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Next.js, Tailwind"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "C#"
+    },
+    {
+      "name": "AI Chats, Agents & MCP"
+    },
+    {
+      "name": "CI/CD Pipelines (Gitlab)"
+    },
+    {
+      "name": "IoT & Edge Devices"
+    }
+  ],
+  "languages": [
+    {
+      "language": "German",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional Working"
+    }
+  ],
+  "projects": [
+    {
+      "name": "@agent for GitLab",
+      "description": "Built an agent workflow for GitLab that reacts to mentions, runs securely inside CI pipelines, and can search, edit, commit, and reply back through MCP-enabled integrations. The project sharpened my understanding of agent execution, tooling, and production-minded developer workflows.",
+      "url": "https://github.com/Schickli/agent-for-gitlab",
+      "startDate": "2025-08",
+      "endDate": "",
+      "type": "Hobby"
+    },
+    {
+      "name": "Knowledge-Enabled Personas",
+      "description": "For my apprenticeship final project, I added a retrieval-driven knowledge layer to Bühler Chat so users could query selected SharePoint documents and share reusable personas with pre-attached document context. The focus was making internal knowledge easier to use in AI-assisted workflows.",
+      "startDate": "2025-05",
+      "endDate": "",
+      "type": "Apprenticeship"
+    },
+    {
+      "name": "query-layer",
+      "description": "I built this to experiment with Durable Objects and AI agents for fast, retrieval-driven knowledge access. It provides a simple interface to add data and query it with LLMs. The project helped me understand how to build AI-assisted products with a strong focus on performance and the importance of simple but powerful tools for an agent.",
+      "startDate": "2025-11",
+      "endDate": "",
+      "type": "Hobby"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Soccer"
+    },
+    {
+      "name": "Kitesurfing"
+    },
+    {
+      "name": "Skiing"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}

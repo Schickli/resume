@@ -67,6 +67,14 @@ export const PreviewResume = forwardRef<
     }
   };
 
+  const formatDateRange = (startDate?: string, endDate?: string) => {
+    if (!startDate) {
+      return endDate || "";
+    }
+
+    return endDate ? `${startDate} - ${endDate}` : startDate;
+  };
+
   return (
     <div className="flex justify-center items-start min-h-screen p-1 sm:p-8">
       <div
@@ -118,7 +126,7 @@ export const PreviewResume = forwardRef<
                       <p>{job.position}</p>
                     </div>
                     <p className="text-sm text-gray-600">
-                      {job.startDate} - {job.endDate || "Present"}
+                        {formatDateRange(job.startDate, job.endDate)}
                     </p>
                   </div>
                   <p className="text-sm mt-1 text-gray-600">
@@ -150,7 +158,7 @@ export const PreviewResume = forwardRef<
                       <h3 className="">{project.type}</h3>
                     </div>
                     <p className="text-sm text-gray-600">
-                      {project.startDate} - {project.endDate || "Present"}
+                      {formatDateRange(project.startDate, project.endDate)}
                     </p>
                   </div>
                   <p className="text-sm mt-1 text-gray-600">{project.url}</p>
@@ -198,7 +206,7 @@ export const PreviewResume = forwardRef<
                       {edu.studyType} {edu.area && <span>in {edu.area}</span>}
                     </h3>
                     <p className="text-sm text-gray-600">
-                      {edu.startDate} - {edu.endDate || "Present"}
+                      {formatDateRange(edu.startDate, edu.endDate)}
                     </p>
                   </div>
                   <p className="text-sm text-gray-600">{edu.institution}</p>
