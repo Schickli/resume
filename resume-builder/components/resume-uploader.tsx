@@ -64,7 +64,7 @@ export const ResumeUploaderComponent = forwardRef<
   "basics": {
     "name": "Maurin Schickli",
     "label": "Fullstack Developer - Vice World Champion in Industry 4.0",
-    "image": "https://utfs.io/f/YYyCPs0ONMJCzCDvfpMC3RVpBz7sIkoL5NeTialcP8AHDFyg",
+    "image": "https://cdn.schickli.com/headshot-maurin.jpg",
     "email": "hello@schickli.com",
     "url": "https://schickli.com",
     "summary": "Fullstack Developer passionate about building solutions that solve real-world challenges. With a background in IoT and software development, I enjoy solving ideas into user-friendly tools.",
